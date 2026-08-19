@@ -1,0 +1,81 @@
+{
+  "name": "ssh-mcp-secure",
+  "version": "1.0.0",
+  "description": "高安全性 SSH MCP Server - Enterprise-grade SSH management with AI intelligence",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "ssh-mcp-secure": "./build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js",
+    "start": "node build/index.js",
+    "dev": "tsc && node --watch build/index.js",
+    "lint": "eslint src/**/*.ts",
+    "test": "node test-security.js",
+    "test:security": "node test-security.js",
+    "test:coverage": "vitest --coverage",
+    "security:audit": "npm audit --audit-level=high",
+    "security:check": "npx snyk test",
+    "validate:env": "node -e \"require('./build/config/environment-validator.js').environmentValidator.validateAll()\""
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "0.6.0",
+    "@types/diff": "^7.0.2",
+    "diff": "^7.0.0",
+    "dotenv": "^16.4.1",
+    "otplib": "^12.0.1",
+    "redis": "^5.6.0",
+    "ssh2": "^1.15.0",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0",
+    "winston-daily-rotate-file": "^4.7.1",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "crypto-js": "^4.2.0",
+    "node-forge": "^1.3.1",
+    "speakeasy": "^2.0.0",
+    "qrcode": "^1.5.3",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "axios": "^1.6.7",
+    "node-cache": "^5.1.2",
+    "prom-client": "^15.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/ssh2": "^1.11.18",
+    "@types/uuid": "^9.0.8",
+    "@types/crypto-js": "^4.2.2",
+    "@types/node-forge": "^1.3.11",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/qrcode": "^1.5.5",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.7.3",
+    "vitest": "^1.3.1",
+    "@vitest/coverage-v8": "^1.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "keywords": [
+    "ssh",
+    "mcp",
+    "security",
+    "enterprise",
+    "ai",
+    "automation"
+  ],
+  "author": "Brian",
+  "license": "MIT"
+}

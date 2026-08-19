@@ -1,0 +1,438 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+
+# Environment variables - CRITICAL FOR SECURITY
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.production
+.env.staging
+.env.development
+*.env
+env/
+.env.*.local
+
+# Logs
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Build output
+build/
+dist/
+*.tsbuildinfo
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Sensitive configuration - HIGH PRIORITY
+.config/
+config/
+credentials/
+secrets/
+*.key
+*.pem
+*.pub
+*.crt
+*.cert
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+*.temp
+
+# SSH Keys and Certificates - CRITICAL
+known_hosts
+authorized_keys
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+*.ppk
+*.pfx
+*.p12
+*.cer
+ssl/
+certs/
+keys/
+
+# Passwords and Authentication - CRITICAL
+passwords.txt
+*.password
+*.passwd
+auth.json
+*.auth
+tokens.json
+*.token
+*.jwt
+api_keys.json
+api_keys.txt
+*.apikey
+*.api_key
+apikeys/
+tokens/
+
+# Database Credentials
+database.yml
+db.config
+*.db
+*.sqlite
+*.sqlite3
+mongodb.conf
+redis.conf
+
+# Test Data
+test-data/
+test-credentials/
+test-*.json
+*-test.json
+
+# Session Data
+sessions/
+*.session
+session_store/
+ssh-sessions/
+connection-logs/
+command-history/
+
+# Cache with Potential Sensitive Data
+cache/
+*.cache
+.cache/
+.redis-cache
+
+# Memory Dumps and Core Files
+*.dump
+*.core
+core.*
+
+# Temporary Files
+tmp/
+temp/
+.tmp/
+.temp/
+
+# Testing Reports
+test-reports/
+coverage/
+*.coverage
+.nyc_output/
+
+# Compliance and Audit Files
+compliance-reports/
+audit-logs/
+*.audit
+*.compliance
+
+# Machine Learning Models and Data
+models/
+*.model
+*.pkl
+training-data/
+ml-cache/
+
+# Personal and Organization Specific
+personal-notes/
+internal-docs/
+*.internal
+*.confidential
+*.private
+
+# GitHub Actions Secrets
+.github/workflows/secrets/
+github-secrets/
+
+# Terraform State Files
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Ansible Vault Files
+*.vault
+vault-password.txt
+
+# Docker Secrets
+docker-compose.override.yml
+.dockerignore.local
+
+# Kubernetes Secrets
+*-secret.yaml
+*-secret.yml
+secrets.yaml
+secrets.yml
+
+# CI/CD Secrets
+.travis.yml.local
+.circleci/config.local.yml
+jenkins-secrets/
+
+# MCP Configuration with Credentials
+mcp-config.json
+.mcp/
+mcp-credentials/
+
+# Local Development Overrides
+*.local
+*.development
+local-config/
+dev-config/
+
+# Debug files
+debug.log
+debug.json
+*.debug
+
+# Server Credentials - CRITICAL SECURITY
+server-credentials/
+credentials.json
+secrets.json
+*-credentials.json
+*-secrets.json
+*.credentials
+*.secrets
+
+# Predefined server configurations
+predefined-servers.json
+server-config.json
+
+# Demo and Testing Artifacts
+*-demo/
+*-test/
+demo-credentials/
+
+# Memory persistence files
+data/memory/
+*.memory.json
+
+# Redis dump
+dump.rdb
+appendonly.aof
+
+# Prometheus data
+prometheus-data/
+grafana-data/
+
+# Encryption keys
+*.aes
+*.aes256
+encryption-keys/
+master-key*
+
+# JWT secrets
+jwt-secret*
+jwks.json
+
+# OAuth credentials
+oauth-credentials.json
+oauth-tokens.json
+
+# Service account keys
+service-account*.json
+sa-*.json
+
+# Private configuration
+private/
+*.private.json
+*.private.yaml
+*.private.yml
+
+# User data
+users.json
+user-data/
+*.users
+
+# Access logs with sensitive info
+access_log
+error_log
+*.err
+
+# Performance profiles
+*.cpuprofile
+*.heapprofile
+*.profile
+
+# Dependency directories
+vendor/
+.bundle/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Parcel cache
+.parcel-cache/
+
+# Next.js build output
+.next/
+out/
+
+# Nuxt.js build output
+.nuxt/
+
+# Vuepress build output
+.vuepress/dist/
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# Ternary port
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Ionic native plugins
+lib/
+
+# Android Studio will create .iml files in modules
+*.iml
+
+# Eclipse settings
+.settings/
+.classpath
+.project
+
+# IntelliJ IDEA
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+!.vscode/.prettierignore
+!.vscode/.prettierrc
+
+# Local development machine files
+*.local
+*.dev
+*.development
+
+# Sensitive environment files
+.env*.local
+.env*.development
+.env*.production
+.env*.staging
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+.nyc_output
+
+# Grunt intermediate storage
+.grunt
+
+# Bower dependency directory
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# node-gyp configuration
+.gyp
+*.gypi
+
+# Compiled binary addons
+build/Release
+
+# TypeScript v1 declaration files
+typings/
+
+# TypeScript output
+*.tsbuildinfo
+
+# Optional jest cache
+jest_cache/
+
+# Mocha progress file
+.mochaprocess
+
+# Serverless artifacts
+.serverless
+
+# Build output for various frameworks
+public/bundle.js
+public/bundle.css
+public/css/style.css
+
+# Storybook build outputs
+storybook-static/
+
+# Build outputs for static site generators
+_site/
+_site/
+
+# Parcel
+.parcel-cache/
+
+# Other
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
