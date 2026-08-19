@@ -1,85 +1,85 @@
-# 🚀 SSH-MCP 階段 2 實用功能使用指南
+# 🚀 SSH-MCP Stage 2 Practical Features Guide
 
-**更新日期**: 2026-08-19  
-**狀態**: ✅ 已完成
+**Update Date**: 2026-08-19  
+**Status**: ✅ Completed
 
 ---
 
-## 📦 已實現的功能
+## 📦 Implemented Features
 
-### ✅ 功能 1: 文件上傳/下載 (SFTP)
+### ✅ Feature 1: File Upload/Download (SFTP)
 
-**命令**: `npm run sftp`
+**Command**: `npm run sftp`
 
-#### 用法
+#### Usage
 
 ```bash
-# 列出遠程目錄
+# List remote directory
 npm run sftp list /home/brian/Projects
 
-# 上傳文件
+# Upload file
 npm run sftp upload ./local.txt /home/brian/remote.txt
 
-# 下載文件
+# Download file
 npm run sftp download /home/brian/remote.txt ./local.txt
 ```
 
-#### 範例
+#### Examples
 
 ```bash
-# 查看 Projects 目錄
+# View Projects directory
 node src/sftp.js list /home/brian/Projects
 
-# 上傳配置文件
+# Upload config file
 node src/sftp.js upload ./config.json /home/brian/config.json
 
-# 下載日誌文件
+# Download log file
 node src/sftp.js download /home/brian/app.log ./app.log
 ```
 
 ---
 
-### ✅ 功能 2: 批量命令執行 + 會話歷史
+### ✅ Feature 2: Batch Command Execution + Session History
 
-**命令**: `npm run batch`
+**Command**: `npm run batch`
 
-#### 用法
+#### Usage
 
 ```bash
-# 使用默認命令列表
+# Use default command list
 npm run batch
 
-# 使用自定義命令文件
+# Use custom commands file
 npm run batch commands.txt
 
-# 指定輸出文件
+# Specify output file
 npm run batch commands.txt output.json
 ```
 
-#### 命令文件格式
+#### Commands File Format
 
-創建 `commands.txt`:
+Create `commands.txt`:
 
 ```bash
-# 系統信息
+# System information
 uname -a
 whoami
 pwd
 
-# 磁盤空間
+# Disk space
 df -h
 
-# 內存使用
+# Memory usage
 free -m
 
-# 運行時間
+# Uptime
 uptime
 
-# 進程列表
+# Process list
 ps aux | head -20
 ```
 
-#### 輸出範例
+#### Output Example
 
 ```json
 {
@@ -106,83 +106,82 @@ ps aux | head -20
 
 ---
 
-### ✅ 功能 3: Web UI
+### ✅ Feature 3: Web UI
 
-**命令**: `npm run web`
+**Command**: `npm run web`
 
-#### 啟動 Web 服務器
+#### Start Web Server
 
 ```bash
 npm run web
 ```
 
-#### 訪問
+#### Access
 
-打開瀏覽器訪問：http://localhost:3000
+Open browser and visit: http://localhost:3000
 
-#### 功能
+#### Features
 
-- ✅ 查看 SSH 連接狀態
-- ✅ 執行遠程命令
-- ✅ 查看命令歷史
-- ✅ 實時輸出顯示
-- ✅ 錯誤提示
+- ✅ View SSH connection status
+- ✅ Execute remote commands
+- ✅ View command history
+- ✅ Real-time output display
+- ✅ Error notifications
 
-#### 界面特點
+#### UI Features
 
-- 🎨 美觀的漸變色界面
-- 📊 實時連接狀態顯示
-- 📜 命令歷史記錄
-- ⚡ 快速命令執行
-- 📱 響應式設計
+- 🎨 Beautiful gradient design
+- 📊 Real-time connection status
+- ⚡ Fast command execution
+- 📜 Command history log
 
 ---
 
-### ✅ 功能 4: 目錄掃描
+### ✅ Feature 4: Directory Scanning
 
-**命令**: `npm run scan`
+**Command**: `npm run scan`
 
-#### 用法
+#### Usage
 
 ```bash
-# 掃描默認目錄
+# Scan default directory
 npm run scan
 
-# 掃描指定目錄
+# Scan specific directory
 npm run scan /home/brian/Projects
 
-# 掃描其他目錄
+# Scan other directory
 npm run scan /var/log
 ```
 
-#### 輸出內容
+#### Output Content
 
-- 📁 資料夾列表（名稱、大小、修改時間）
-- 📄 文件列表（名稱、大小、修改時間）
-- 📊 統計信息（資料夾數、文件數）
-- 🔍 每個資料夾的詳細掃描（文件數、子資料夾數）
+- 📁 Folder list (name, size, modification time)
+- 📄 File list (name, size, modification time)
+- 📊 Statistics (folder count, file count)
+- 🔍 Detailed scan for each folder (file count, subfolder count)
 
 ---
 
-## 🎯 使用場景
+## 🎯 Use Cases
 
-### 場景 1: 部署項目
+### Use Case 1: Deploy Project
 
 ```bash
-# 1. 上傳項目文件
+# 1. Upload project files
 npm run sftp upload ./my-app.zip /home/brian/my-app.zip
 
-# 2. SSH 連接解壓
-node src/core.js  # 修改命令為：unzip /home/brian/my-app.zip
+# 2. SSH connect and extract
+node src/core.js  # Modify command to: unzip /home/brian/my-app.zip
 
-# 3. 驗證部署
+# 3. Verify deployment
 npm run sftp list /home/brian/my-app
 ```
 
-### 場景 2: 批量收集系統信息
+### Use Case 2: Batch Collect System Information
 
 ```bash
-# 創建命令文件
+# Create commands file
 cat > sysinfo.txt << EOF
 uname -a
 cat /etc/os-release
@@ -192,84 +191,84 @@ uptime
 who
 EOF
 
-# 執行批量命令
+# Execute batch commands
 npm run batch sysinfo.txt sysinfo.json
 ```
 
-### 場景 3: 日常監控
+### Use Case 3: Daily Monitoring
 
 ```bash
-# 啟動 Web UI
+# Start Web UI
 npm run web
 
-# 在瀏覽器中執行監控命令
+# Execute monitoring commands in browser
 # - ps aux
 # - top -b -n 1
 # - netstat -tuln
 # - df -h
 ```
 
-### 場景 4: 日誌分析
+### Use Case 4: Log Analysis
 
 ```bash
-# 下載日誌文件
+# Download log file
 npm run sftp download /var/log/app.log ./app.log
 
-# 本地分析
-# 或使用 Web UI 遠程查看
+# Analyze locally
+# Or use Web UI to view remotely
 ```
 
 ---
 
-## 📋 快速參考
+## 📋 Quick Reference
 
-| 功能 | 命令 | 說明 |
-|------|------|------|
-| SSH 連接 | `npm start` | 基礎 SSH 連接測試 |
-| 文件上傳 | `npm run sftp upload <本地> <遠程>` | 上傳文件到服務器 |
-| 文件下載 | `npm run sftp download <遠程> <本地>` | 從服務器下載文件 |
-| 目錄列表 | `npm run sftp list <目錄>` | 列出遠程目錄內容 |
-| 批量執行 | `npm run batch [文件] [輸出]` | 批量執行命令 |
-| Web UI | `npm run web` | 啟動 Web 界面 |
-| 目錄掃描 | `npm run scan <目錄>` | 掃描目錄結構 |
+| Feature | Command | Description |
+|---------|---------|-------------|
+| SSH Connect | `npm start` | Basic SSH connection test |
+| File Upload | `npm run sftp upload <local> <remote>` | Upload file to server |
+| File Download | `npm run sftp download <remote> <local>` | Download file from server |
+| Directory List | `npm run sftp list <directory>` | List remote directory content |
+| Batch Execute | `npm run batch [file] [output]` | Execute batch commands |
+| Web UI | `npm run web` | Start web interface |
+| Directory Scan | `npm run scan <directory>` | Scan directory structure |
 
 ---
 
-## 🔧 配置
+## 🔧 Configuration
 
-### 環境變量 (.env)
+### Environment Variables (.env)
 
 ```ini
-# SSH 配置
+# SSH Configuration
 SERV02_HOST=192.168.68.64
 SERV02_PORT=22
 SERV02_USERNAME=brian
 SERV02_PASSWORD=***
-# 或
-SERV02_PRIVATE_KEY_PATH=C:/Use...5519
+# Or
+SERV02_PRIVATE_KEY_PATH=C:/Users/brian/.ssh/id_ed25519
 
-# Web UI 配置
+# Web UI Configuration
 WEB_PORT=3000
 ```
 
 ---
 
-## 💡 最佳實踐
+## 💡 Best Practices
 
-### 1. 使用 SSH 密鑰認證
+### 1. Use SSH Key Authentication
 
 ```bash
-# 生成密鑰
+# Generate key
 ssh-keygen -t ed25519
 
-# 複製到服務器
+# Copy to server
 ssh-copy-id brian@192.168.68.64
 
-# 在 .env 中配置
-SERV02_PRIVATE_KEY_PATH=C:/Use...5519
+# Configure in .env
+SERV02_PRIVATE_KEY_PATH=C:/Users/brian/.ssh/id_ed25519
 ```
 
-### 2. 創建常用命令模板
+### 2. Create Common Command Templates
 
 ```bash
 # commands-deploy.txt
@@ -279,45 +278,45 @@ npm install
 npm run build
 pm2 restart my-app
 
-# 執行
+# Execute
 npm run batch commands-deploy.txt deploy-log.json
 ```
 
-### 3. 定期備份
+### 3. Regular Backups
 
 ```bash
-# 創建備份腳本
+# Create backup script
 cat > backup.sh << EOF
 tar -czf /home/brian/backup-\$(date +%Y%m%d).tar.gz /home/brian/Projects
 EOF
 
-# 上傳並執行
+# Upload and execute
 npm run sftp upload backup.sh /home/brian/backup.sh
-node src/core.js  # 執行：bash /home/brian/backup.sh
+node src/core.js  # Execute: bash /home/brian/backup.sh
 npm run sftp download /home/brian/backup-*.tar.gz ./
 ```
 
 ---
 
-## 🎊 完成清單
+## 🎊 Completion Checklist
 
-- [x] 文件上傳/下載
-- [x] 批量命令執行
-- [x] 會話歷史記錄
-- [x] Web UI 界面
-- [x] 目錄掃描工具
+- [x] File upload/download
+- [x] Batch command execution
+- [x] Session history logging
+- [x] Web UI interface
+- [x] Directory scanning tool
 
-**所有階段 2 功能已完成！** 🚀
+**All Stage 2 features completed!** 🚀
 
 ---
 
-## 📞 需要幫助？
+## 📞 Need Help?
 
-如果遇到問題：
+If you encounter issues:
 
-1. 檢查 .env 配置是否正確
-2. 確認 SSH 連接是否正常
-3. 查看錯誤信息
-4. 參考範例命令
+1. Check .env configuration is correct
+2. Verify SSH connection works
+3. Review error messages
+4. Refer to example commands
 
-**祝你使用愉快！** 🎉
+**Happy using!** 🎉

@@ -1,7 +1,7 @@
 {
   "name": "ssh-mcp-secure",
   "version": "1.0.0",
-  "description": "SSH-MCP Core - 精簡核心版",
+  "description": "High-Security SSH MCP Server - Enterprise-grade SSH management with practical features",
   "private": true,
   "type": "module",
   "bin": {
@@ -26,7 +26,12 @@
   "keywords": [
     "ssh",
     "mcp",
-    "core"
+    "security",
+    "enterprise",
+    "automation",
+    "sftp",
+    "batch",
+    "web-ui"
   ],
   "author": "Brian",
   "license": "MIT"
